@@ -21,53 +21,37 @@ assign oe = |Register_Control_Bus[11:6];
 
 assign bus = oe ? data_out : 16'bZ;
 
-/*
-*	Output Register A
-*/
-always @(posedge Register_Control_Bus[6])
-	begin
-		data_out = A;
-	end 
 
 /*
-*	Output Register B
+*	Output Registers if required
 */
-always @(posedge Register_Control_Bus[7])
+always @(posedge oe)
 	begin
-		data_out = B;
-	end 
-
-/*
-*	Output Register C
-*/
-always @(posedge Register_Control_Bus[8])
-	begin
-		data_out = C;
-	end 
-
-/*
-*	Output Register P
-*/
-always @(posedge Register_Control_Bus[9])
-	begin
-		data_out = P;
-	end 
-
-/*
-*	Output Register S
-*/
-always @(posedge Register_Control_Bus[10])
-	begin
-		data_out = S;
-	end 
-
-/*
-*	Output Register ST
-*/
-always @(posedge Register_Control_Bus[11])
-	begin
-		data_out = ST;
-	end 
+		if(Register_Control_Bus[6])
+			begin
+				data_out = A;
+			end
+		else if (Register_Control_Bus[7])
+			begin
+				data_out = B;
+			end
+		else if (Register_Control_Bus[8])
+			begin
+				data_out = C;
+			end
+		else if (Register_Control_Bus[9])
+			begin
+				data_out = P;
+			end
+		else if (Register_Control_Bus[10])
+			begin
+				data_out = S;
+			end
+		else if (Register_Control_Bus[11])
+			begin
+				data_out = ST;
+			end
+	end
 
 /*
 *	Handling Register Input

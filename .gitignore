@@ -3,4 +3,9 @@ db/
 incremental_db/
 *.rpt
 *.done
-.summary
+*.summary
+*.smsg
+*.pin
+simulation/
+*.sof
+*.jdi
