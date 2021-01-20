@@ -22,7 +22,7 @@ input	 [15:0]	P_reg
 
 
 assign bus = mem_control_bus[2] ? dram_dq : 16'bZ;
-assign dram_data = mem_control_bus[1] ? bus : 0;
+assign dram_data = mem_control_bus[1] ? bus : 16'b0;
 
 reg [15:0] addr;
 assign dram_addr = addr[14:0];
