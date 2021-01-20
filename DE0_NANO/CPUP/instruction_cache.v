@@ -22,8 +22,4 @@ reg oe = 0;
 reg [15:0] bus_out;
 assign bus = oe ? bus_out : 16'bZ;
 
-reg moe = 0;
-reg [15:0] mcb_out;
-assign mem_control_bus = moe ? mcb_out : 16'bZ;
-
 endmodule 
