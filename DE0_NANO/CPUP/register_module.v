@@ -25,62 +25,40 @@ assign bus = oe ? data_out : 16'bZ;
 /*
 *	Output Registers if required
 */
-always @(posedge oe)
+always @(posedge oe or posedge clock_in)
 	begin
+	if(oe)
+		begin
 		if(Register_Control_Bus[6])
-			begin
-				data_out = A;
-			end
+			data_out <= A;
 		else if (Register_Control_Bus[7])
-			begin
-				data_out = B;
-			end
+			data_out <= B;
 		else if (Register_Control_Bus[8])
-			begin
-				data_out = C;
-			end
+			data_out <= C;
 		else if (Register_Control_Bus[9])
-			begin
-				data_out = P;
-			end
+			data_out <= P;
 		else if (Register_Control_Bus[10])
-			begin
-				data_out = S;
-			end
+			data_out <= S;
 		else if (Register_Control_Bus[11])
-			begin
-				data_out = ST;
-			end
+			data_out <= ST;
+		end
 	end
-
 /*
 *	Handling Register Input
 */
 always @(negedge clock_in)
 	begin
-		if(Register_Control_Bus[0])
-			begin
-			A <= bus;
-			end
-		if(Register_Control_Bus[1])
-			begin
-			B <= bus;
-			end
-		if(Register_Control_Bus[2])
-			begin
-			C <= bus;
-			end
-		if(Register_Control_Bus[3])
-			begin
-			P <= bus;
-			end
-		if(Register_Control_Bus[4])
-			begin
-			S <= bus;
-			end
-		if(Register_Control_Bus[5])
-			begin
-			ST <= bus;
-			end
+	if(Register_Control_Bus[0])
+		A <= bus;
+	else if(Register_Control_Bus[1])
+		B <= bus;
+	else if(Register_Control_Bus[2])
+		C <= bus;
+	else if(Register_Control_Bus[3])
+		P <= bus;
+	else if(Register_Control_Bus[4])
+		S <= bus;
+	else if(Register_Control_Bus[5])
+		ST <= bus;
 	end
 endmodule 

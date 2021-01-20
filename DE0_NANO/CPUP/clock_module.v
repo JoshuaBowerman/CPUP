@@ -7,7 +7,9 @@ module clock_module(
 	);
 	
 	
-reg [7:0] counter;
+reg [7:0] 	counter;
+reg 			clk = 0;
+assign clock_out = clk;
 	
 always @(posedge clock_in)
 	begin
@@ -15,6 +17,8 @@ always @(posedge clock_in)
 		if(counter >= ratio)
 			begin
 					counter <= 0;
+					clk = ~ clk;
+					
 			end
 	end
 
