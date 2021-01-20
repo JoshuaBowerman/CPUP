@@ -1,12 +1,10 @@
 `timescale 1ns / 1ps
 
 module memory_controller(
-output 			ras,
-output 			cas,
 output			we,
-output			oe,
-output [12:0]	dram_addr,
-inout  [15:0]	dram_dq,
+output [14:0]	dram_addr,
+input  [15:0]	dram_dq,
+output [15:0]  dram_data,
 inout  [15:0]	bus,
 input  [15:0]	address_space,
 input  [3:0]	mem_control_bus,
@@ -19,9 +17,22 @@ output [15:0]	inst_offset,
 input	 [15:0]	P_reg
 );
 
-reg boe = 0;
-reg [15:0] bus_out;
-assign bus = boe ? bus_out : 16'bZ;
+
+
+
+
+assign bus = mem_control_bus[2] ? dram_dq : 16'bZ;
+assign dram_data = mem_control_bus[1] ? bus : 0;
+
+reg [15:0] addr;
+assign dram_addr = addr[14:0];
+
+always @(negedge clock)
+	begin
+	if(mem_control_bus[0])
+		addr <= bus;
+	
+	end
 
 
 
