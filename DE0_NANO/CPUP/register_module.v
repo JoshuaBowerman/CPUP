@@ -4,7 +4,8 @@ module register_module(
 input					clock_in,
 inout 	[15:0]	bus,
 input		[11:0]	Register_Control_Bus,
-output   [15:0]   S_out
+output   [15:0]   S_out,
+output	[15:0]	P_out
 );
 
 reg 	[15:0]	A;
@@ -23,6 +24,7 @@ assign oe = |Register_Control_Bus[11:6];
 assign bus = oe ? data_out : 16'bZ;
 
 assign S_out = S;
+assign P_out = P;
 
 
 /*
