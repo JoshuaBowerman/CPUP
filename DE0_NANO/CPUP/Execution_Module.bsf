@@ -67,18 +67,18 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 48)(pt 0 48)(line_width 3))
 	)
 	(port
-		(pt 0 64)
-		(output)
-		(text "ACB[7..0]" (rect 0 0 48 12)(font "Arial" ))
-		(text "ACB[7..0]" (rect 24 56 72 68)(font "Arial" ))
-		(line (pt 16 64)(pt 0 64)(line_width 3))
-	)
-	(port
 		(pt 0 96)
 		(output)
 		(text "ICB[2..0]" (rect 0 0 44 12)(font "Arial" ))
 		(text "ICB[2..0]" (rect 24 88 68 100)(font "Arial" ))
 		(line (pt 16 96)(pt 0 96)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(output)
+		(text "ACB[8..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "ACB[8..0]" (rect 24 56 72 68)(font "Arial" ))
+		(line (pt 16 64)(pt 0 64)(line_width 3))
 	)
 	(port
 		(pt 0 80)
