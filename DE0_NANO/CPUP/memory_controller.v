@@ -23,17 +23,23 @@ assign dram_data = mem_control_bus[1] ? bus : 16'b0;
 assign we = mem_control_bus[1];
 
 
+reg [15:0] inst;
+assign instruction = inst;
+assign double_increment = inst[1];
+
 
 reg [15:0] addr;
 assign dram_addr = addr[14:0];
 assign instruction_bus = addr;
+
+
 always @(negedge clock)
 	begin
 	if(mem_control_bus[0])
 		addr <= bus;
-	
+	if(mem_control_bus[3])
+		inst <= dram_dq;
 	end
-
 
 
 endmodule 
