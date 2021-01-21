@@ -1,12 +1,12 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPUP -c CPUP --vector_source="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/Waveform.vwf" --testbench_file="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/simulation/qsim/Waveform.vwf.vt"</ftestbench_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPUP -c CPUP --vector_source="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/Memory.vwf" --testbench_file="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/simulation/qsim/Memory.vwf.vt"</ftestbench_cmd>
 <ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPUP -c CPUP --vector_source="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/Waveform.vwf" --testbench_file="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
 <fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/simulation/qsim/" CPUP -c CPUP</fnetlist_cmd>
 <tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Josh/Desktop/CPUP/DE0_NANO/CPUP/simulation/qsim/" CPUP -c CPUP</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work CPUP.vo
-vlog -work work Waveform.vwf.vt
+vlog -work work Memory.vwf.vt
 vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.CPU_vlg_vec_tst
 vcd file -direction CPUP.msim.vcd
 vcd add -internal CPU_vlg_vec_tst/*
