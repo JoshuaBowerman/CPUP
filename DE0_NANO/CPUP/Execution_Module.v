@@ -14,13 +14,12 @@ input		[25:0]	microcode
 
 );
 
-reg oe = 0; //Dont forget
-reg [15:0] bus_out;
-assign bus = oe ? bus_out : 16'bZ;
+assign oe = microcode[25]; //Dont forget
+assign bus = oe ? (d_inc ? 16'b10 : 16'b01) : 16'bZ;
 
 
 //RCB stuff
-reg [11:0] RCB_out = 0;
+wire [11:0] RCB_out;
 assign RCB = RCB_out;
 
 //microcode index
@@ -56,33 +55,31 @@ assign MCB = microcode[15:12];
 /*
 	This will be the logic to run the RCB
 */
-always @(posedge clock)
-begin
+
 	//A in
-	RCB_out[0] <= ((microcode[19] == 1) && (instruction[7:5] == 3'b000)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b000));
+assign	RCB_out[0] = ((microcode[19] == 1) && (instruction[7:5] == 3'b000)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b000));
 	//B in
-	RCB_out[1] <= ((microcode[19] == 1) && (instruction[7:5] == 3'b001)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b001));
+assign	RCB_out[1] = ((microcode[19] == 1) && (instruction[7:5] == 3'b001)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b001));
 	//C in
-	RCB_out[2] <= ((microcode[19] == 1) && (instruction[7:5] == 3'b010)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b010));
+assign	RCB_out[2] = ((microcode[19] == 1) && (instruction[7:5] == 3'b010)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b010));
 	//P in
-	RCB_out[3] <= ((microcode[19] == 1) && (instruction[7:5] == 3'b011)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b011));
+assign	RCB_out[3] = ((microcode[19] == 1) && (instruction[7:5] == 3'b011)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b011)) || microcode[16];
 	//S in
-	RCB_out[4] <= ((microcode[19] == 1) && (instruction[7:5] == 3'b110)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b110));
+assign	RCB_out[4] = ((microcode[19] == 1) && (instruction[7:5] == 3'b110)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b110));
 	//ST in
-	RCB_out[5] <= ((microcode[19] == 1) && (instruction[7:5] == 3'b101)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b101));
+assign	RCB_out[5] = ((microcode[19] == 1) && (instruction[7:5] == 3'b101)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b101));
 	//A out
-	RCB_out[6] <= ((microcode[21] == 1) && (instruction[7:5] == 3'b000)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b000));
+assign	RCB_out[6] = ((microcode[21] == 1) && (instruction[7:5] == 3'b000)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b000));
 	//B out
-	RCB_out[7] <= ((microcode[21] == 1) && (instruction[7:5] == 3'b001)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b001));
+assign	RCB_out[7] = ((microcode[21] == 1) && (instruction[7:5] == 3'b001)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b001));
 	//C out
-	RCB_out[8] <= ((microcode[21] == 1) && (instruction[7:5] == 3'b010)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b010));
+assign	RCB_out[8] = ((microcode[21] == 1) && (instruction[7:5] == 3'b010)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b010));
 	//P out
-	RCB_out[9] <= ((microcode[21] == 1) && (instruction[7:5] == 3'b011)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b011));
+assign	RCB_out[9] = ((microcode[21] == 1) && (instruction[7:5] == 3'b011)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b011)) || microcode[17];
 	//S out
-	RCB_out[10] <= ((microcode[21] == 1) && (instruction[7:5] == 3'b100)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b100));
+assign	RCB_out[10] = ((microcode[21] == 1) && (instruction[7:5] == 3'b100)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b100));
 	//ST out
-	RCB_out[11] <= ((microcode[21] == 1) && (instruction[7:5] == 3'b101)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b101));
-end
+assign	RCB_out[11] = ((microcode[21] == 1) && (instruction[7:5] == 3'b101)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b101));
 
 
 
