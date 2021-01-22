@@ -21,7 +21,7 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 64 64 272 208)
+	(rect 64 64 296 208)
 	(text "Execution_Module" (rect 5 0 93 12)(font "Arial" ))
 	(text "inst" (rect 8 128 25 140)(font "Arial" ))
 	(port
@@ -32,25 +32,32 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 112)(pt 16 112))
 	)
 	(port
-		(pt 208 104)
+		(pt 232 104)
 		(input)
 		(text "d_inc" (rect 0 0 25 12)(font "Arial" ))
-		(text "d_inc" (rect 158 96 183 108)(font "Arial" ))
-		(line (pt 192 104)(pt 208 104))
+		(text "d_inc" (rect 182 96 207 108)(font "Arial" ))
+		(line (pt 216 104)(pt 232 104))
 	)
 	(port
-		(pt 208 88)
+		(pt 232 88)
 		(input)
 		(text "paging" (rect 0 0 31 12)(font "Arial" ))
-		(text "paging" (rect 152 80 183 92)(font "Arial" ))
-		(line (pt 192 88)(pt 208 88))
+		(text "paging" (rect 176 80 207 92)(font "Arial" ))
+		(line (pt 216 88)(pt 232 88))
 	)
 	(port
-		(pt 208 120)
+		(pt 232 120)
 		(input)
 		(text "instruction[15..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "instruction[15..0]" (rect 101 112 183 124)(font "Arial" ))
-		(line (pt 192 120)(pt 208 120)(line_width 3))
+		(text "instruction[15..0]" (rect 125 112 207 124)(font "Arial" ))
+		(line (pt 216 120)(pt 232 120)(line_width 3))
+	)
+	(port
+		(pt 232 56)
+		(input)
+		(text "microcode[25..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "microcode[25..0]" (rect 125 48 207 60)(font "Arial" ))
+		(line (pt 216 56)(pt 232 56)(line_width 3))
 	)
 	(port
 		(pt 0 32)
@@ -67,6 +74,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 48)(pt 0 48)(line_width 3))
 	)
 	(port
+		(pt 0 64)
+		(output)
+		(text "ACB[8..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "ACB[8..0]" (rect 24 56 72 68)(font "Arial" ))
+		(line (pt 16 64)(pt 0 64)(line_width 3))
+	)
+	(port
 		(pt 0 96)
 		(output)
 		(text "ICB[2..0]" (rect 0 0 44 12)(font "Arial" ))
@@ -74,11 +88,11 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 96)(pt 0 96)(line_width 3))
 	)
 	(port
-		(pt 0 64)
+		(pt 232 32)
 		(output)
-		(text "ACB[8..0]" (rect 0 0 48 12)(font "Arial" ))
-		(text "ACB[8..0]" (rect 24 56 72 68)(font "Arial" ))
-		(line (pt 16 64)(pt 0 64)(line_width 3))
+		(text "mc_addr[10..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "mc_addr[10..0]" (rect 149 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(port
 		(pt 0 80)
@@ -88,6 +102,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 80)(pt 0 80)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 192 128))
+		(rectangle (rect 16 16 216 128))
 	)
 )
