@@ -16,6 +16,7 @@ reg [16:0]  A;
 reg [16:0]	B;
 reg [16:0]	Result;
 reg [15:0]	Error;
+reg [16:0]  Old_Result;
 
 wire [16:0] add;
 wire [16:0] sub;
@@ -48,6 +49,7 @@ always @(posedge oe or posedge clock)
 		else if (ALU_control_bus[6])
 			bus_out <= Error;
 		end
+	Old_Result = Result;
 	end
 	
 	
@@ -66,19 +68,23 @@ always @(negedge clock)
 	if(ALU_control_bus[2])
 		begin
 		Result <= add[15:0];
-		Error[0] <= add[16];
+		if(add[16])
+			Error[0] <= add[16];
 		end
 	//Subtract
 	if(ALU_control_bus[3])
 		begin
 		Result <= sub[15:0];
-		Error[0] <= sub[16];
+		if(sub[16])
+			Error[0] <= sub[16];
+		Error[1] <= Old_Result[15:0] == bus;
 		end
 	//Multiplication	
 	if(ALU_control_bus[4])
 		begin
 		Result <= mul[15:0];
-		Error[0] <= mul[16];
+		if(mul[16])
+			Error[0] <= mul[16];
 		end
 	//Division	
 	if(ALU_control_bus[5])

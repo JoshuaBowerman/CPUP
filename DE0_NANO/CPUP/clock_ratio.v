@@ -7,6 +7,6 @@ module clock_ratio(
 	
 assign ratio[7:5] = 4'b0;
 assign ratio[4:1] = data[3:0];
-assign ratio[0] = 0;
+assign ratio[0] = 1;
 	
 endmodule 

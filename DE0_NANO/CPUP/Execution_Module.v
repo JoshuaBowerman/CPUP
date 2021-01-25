@@ -37,18 +37,41 @@ assign mc_addr [6] = (instruction[11:10] == 2'b00) ? 0 : 1;
 assign mc_addr[10:7] = instruction[15:12];
 
 //update counter at every neg clock, resetting when appropriate
+
+
+//Long jump is for JLE and JL since they need 7 cycles to jump when the address is attached
+wire long_jump;
+assign long_jump = (instruction[15:12] == 4'b0100) || (instruction[15:12] == 4'b0110);
+
+
 always @(negedge clock)
 begin
 	if(microcode[22] == 0)
-		counter <= counter + 1;
+		begin
+		if(microcode[10:9] == 2'b01 && bus[0] && ~long_jump)
+			counter <= counter + 6;
+		if(microcode[10:9] == 2'b10 && bus[1] && ~long_jump)
+			counter <= counter + 6;
+		if(microcode[10:9] == 2'b11 && (bus[0] || bus[1]) && ~long_jump)
+			counter <= counter + 6;
+		if(microcode[10:9] == 2'b01 && bus[0] && long_jump)
+			counter <= counter + 8;
+		if(microcode[10:9] == 2'b10 && bus[1] && long_jump)
+			counter <= counter + 8;
+		if(microcode[10:9] == 2'b11 && (bus[0] || bus[1]) && long_jump)
+			counter <= counter + 8;
+		if(microcode[10:9] == 2'b00)
+			counter <= counter + 1;
+		end
 	else
 		counter <= 0;
 end
 
+
 //assign ACB to microcode
 assign ACB = microcode[8:0];
 //ICB
-assign ICB = microcode[11:9];
+assign ICB[2] = microcode[11];
 //MCB
 assign MCB = microcode[15:12];
 
@@ -80,7 +103,12 @@ assign	RCB_out[9] = ((microcode[21] == 1) && (instruction[7:5] == 3'b011)) || ((
 assign	RCB_out[10] = ((microcode[21] == 1) && (instruction[7:5] == 3'b100)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b100));
 	//ST out
 assign	RCB_out[11] = ((microcode[21] == 1) && (instruction[7:5] == 3'b101)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b101));
-
+	
+	
+	//IO in
+assign ICB[0] = ((microcode[19] == 1) && (instruction[7:5] == 3'b110)) || ((microcode[18] == 1) && (instruction[4:2] == 3'b110));
+	//IO out
+assign ICB[1] = ((microcode[21] == 1) && (instruction[7:5] == 3'b110)) || ((microcode[20] == 1) && (instruction[4:2] == 3'b110));
 
 
 endmodule 
