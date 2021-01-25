@@ -14,8 +14,8 @@ input		[25:0]	microcode
 
 );
 
-assign oe = microcode[25]; //Dont forget
-assign bus = oe ? (d_inc ? 16'b10 : 16'b01) : 16'bZ;
+assign oe = microcode[24] || microcode[25];
+assign bus = oe ? (microcode[24] ? (d_inc ? 16'b10 : 16'b01) : 16'b01) : 16'bZ;
 
 
 //RCB stuff
