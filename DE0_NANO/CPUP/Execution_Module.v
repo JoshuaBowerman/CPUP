@@ -39,26 +39,18 @@ assign mc_addr[10:7] = instruction[15:12];
 //update counter at every neg clock, resetting when appropriate
 
 
-//Long jump is for JLE and JL since they need 7 cycles to jump when the address is attached
-wire long_jump;
-assign long_jump = (instruction[15:12] == 4'b0100) || (instruction[15:12] == 4'b0110);
+
 
 
 always @(negedge clock)
 begin
 	if(microcode[22] == 0)
 		begin
-		if(microcode[10:9] == 2'b01 && bus[0] && ~long_jump)
-			counter <= counter + 6;
-		if(microcode[10:9] == 2'b10 && bus[1] && ~long_jump)
-			counter <= counter + 6;
-		if(microcode[10:9] == 2'b11 && (bus[0] || bus[1]) && ~long_jump)
-			counter <= counter + 6;
-		if(microcode[10:9] == 2'b01 && bus[0] && long_jump)
+		if(microcode[10:9] == 2'b01 && bus[0])
 			counter <= counter + 8;
-		if(microcode[10:9] == 2'b10 && bus[1] && long_jump)
+		if(microcode[10:9] == 2'b10 && bus[1])
 			counter <= counter + 8;
-		if(microcode[10:9] == 2'b11 && (bus[0] || bus[1]) && long_jump)
+		if(microcode[10:9] == 2'b11 && (bus[0] || bus[1]))
 			counter <= counter + 8;
 		if(microcode[10:9] == 2'b00)
 			counter <= counter + 1;
