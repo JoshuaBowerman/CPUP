@@ -1,8 +1,8 @@
-#Register Module
+# Register Module
 
 The register module contains many of the registers used in the processor most are 16bits(1 word) in size. The register module is controlled with the RCB(Register Control Bus) that is attached to it and the execution module. It always outputs the S and P registers. these are directly connected to the memory module. For each register's size, function, and symbol refer to the following table.
 
-##Registers Contained Within the Module
+## Registers Contained Within the Module
 Symbol | Size(bits) | Function
 ------ | ---------- | --------
 A | 16 | General Purpose Register A
@@ -12,7 +12,7 @@ P | 16 | Instruction Pointer
 S | 16 | The address space being used by the cpu, currently unused.
 ST | 16 | Stack Pointer
 
-##Recgister Control Bus Layout
+## Recgister Control Bus Layout
 
 Index | Function
 ----- | --------

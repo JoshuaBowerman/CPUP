@@ -1,8 +1,8 @@
-#Arithmatic and Logic Unit
+# Arithmatic and Logic Unit
 
 The alu performs all mathematic operations. It is able to perform addition, subtraction, multiplication, division, and modulus. It contains the 17bit register R, and the 16bit register ER. The register R is the result register, it is also commonly used to temporaraly store a value by microcode. it is not accessible to the user. The register ER is the error register, it is seperated by bit, For the purpoose of each bit see the attached table.
 
-##ALU Control Bus
+## ALU Control Bus
 Index | Name | Function
 ----- | ---- | --------
 0 | Rin | R <= bus
@@ -15,7 +15,7 @@ Index | Name | Function
 7 | ERIn | ER <= bus \(This is useful for errors from each module\)
 8 | Mod | R <= R % bus \(This uses the attached division module. It also sets ER\)
 
-##ER bit functions
+## ER bit functions
 
 Index | Meaning
 ----- | -------

@@ -1,12 +1,12 @@
-#Execution Module
+# Execution Module
 This is the most complicated module. it takes the instruction and ecodes it into a microcode address, then increments through the microcode rom executing each microinstruction. It is attached to all control busses, the microcode rom, as well as the Instruction Register from the memory module.
 
 
 
-##Microcode
+## Microcode
 The microcode is 26 bits wide. The microcode address is 11 bits wide. for the breakdown of the addresses and microcode see the attached tables. There is an internal counter that counts to 16(the maximum number of clocks an instruction can take). 
 
-##Microcode Breakdown
+## Microcode Breakdown
 Index | Function
 ----- | --------
 0 .. 8 | ALU Control Bus
@@ -24,7 +24,7 @@ Index | Function
 24 | Increment amount out(1 if no data is attached, 2 if data is attached)
 25 | Output a 1 onto the bus
 
-##Microcode Address Breakdown
+## Microcode Address Breakdown
 Index | Function
 ----- | --------
 0 .. 3 | The counter index(internal counter used to increment through microcode.
@@ -34,7 +34,7 @@ Index | Function
 7 .. 10 | The instruction ID
 
 
-##Exec Function
+## Exec Function
 This is used to jump conditionally. anything other than 00 will increase the counter by 7 if it's requirements are met.
 When using this you should be driving the bus with ER.
 
