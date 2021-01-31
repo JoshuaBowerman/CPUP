@@ -4,7 +4,7 @@
 I wrote this project because i wanted to write my own tiny os. Rather than write it in x86 or ARM I decided to make my own architecture to use. It's a 16bit architecture that uses microcode. The cpu is written in verilog and is seperated into multiple units. below is a list of the units with links that lead to more details and a quick description of it's responsibilities.
 
 ## Units
-###Execution Module
+### Execution Module
 This is responsible for managing all the control busses coming from the various modules, as well as decoding instructions to microcode and executing it.
 [Execution Module](execution.md)
 
