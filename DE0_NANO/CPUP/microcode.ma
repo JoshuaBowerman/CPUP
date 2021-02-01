@@ -16,6 +16,15 @@ define .jmp_amem
 	INST_READ DONE
 end
 define .jmp_mem
+	AOUT ADDR_IN
+	NOP
+	READ ADDR_IN PIN
+	NOP
+	INST_READ DONE
+	NOP
+	NOP
+end
+define .jmp_reg
 	AOUT ADDR_IN PIN
 	NOP
 	INST_READ DONE
@@ -83,12 +92,16 @@ define $JMP AMEM
 	.jmp_amem
 end
 
-define $JL	MEM
+define $JMP REG
+	.jmp_reg
+end
+
+define $JL MEM
 	EROUT GREATER EQUALS
 	.jmp_mem
 	.next
 end
-define $JL	AMEM
+define $JL AMEM
 	EROUT GREATER EQUALS
 	.jmp_amem
 	.next
@@ -122,6 +135,26 @@ define $JGE AMEM
 	EROUT EQUALS GREATER
 	.next
 	.jmp_amem
+end
+define $JL REG
+	EROUT GREATER EQUALS
+	.jmp_reg
+	.next
+end
+define $JLE	REG
+	EROUT GREATER
+	.jmp_reg
+	.next
+end
+define $JE REG
+	EROUT EQUALS
+	.next
+	.jmp_reg
+end
+define $JGE REG
+	EROUT EQUALS GREATER
+	.next
+	.jmp_reg
 end
 
 define $ADD REG REG
