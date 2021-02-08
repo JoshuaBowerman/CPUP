@@ -340,6 +340,38 @@ define $MOD REG AMEM
 	.next
 end
 
+define $COM REG
+	COM AOUT
+	.next
+end
+
+define $COM AINT
+	POUT RIN
+	OUT1 ADD
+	ROUT ADDR_IN
+	NOP
+	READ COM
+	.next
+end
+
+define $COM MEM
+	AOUT ADDR_IN
+	NOP
+	READ COM
+	.next
+end
+
+define $COM AMEM
+	RIN POUT
+	OUT1 ADD
+	ROUT ADDR_IN
+	NOP
+	ADDR_IN READ
+	NOP
+	READ COM
+	.next
+end
+
 	
 
 
