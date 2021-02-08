@@ -399,3 +399,4 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE NOP.vwf
 set_global_assignment -name MIF_FILE Microcode.mif
 set_global_assignment -name MIF_FILE CPUP.mif
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name HEX_FILE Sample.hex
