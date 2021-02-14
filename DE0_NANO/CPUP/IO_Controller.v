@@ -12,9 +12,26 @@ output				SerialWrite,
 input 				clock
 );
 
-reg oe = 0;
-reg [15:0] bus_out;
-assign bus = oe ? bus_out : 16'bZ;
+reg [15:0] IO;
 
+wire oe;
+wire [15:0] bus_out;
+assign bus = oe ? bus_out : 16'bZ;
+assign bus_out = IO;
+assign oe = SerialController[1];
+
+
+always @(posedge clock)
+begin
+	
+end
+
+always @(negedge clock)
+begin
+	if(SerialController[0])
+	begin
+		IO <= bus;
+	end
+end
 endmodule 
 
