@@ -18,3 +18,4 @@ Value | Function
 0001 | Is The Serial Out Buffer Full?
 0010 | Serial Output(The data in IO is added to the Serial out buffer)
 0011 | Serial Input(a *BYTE* is taken off the serial in buffer and placed into IO)
+0100 | Baud Change
