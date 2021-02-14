@@ -16,5 +16,5 @@ Value | Function
 ----- | --------
 0000 | Is There Serial Data? (Outputs 1 if there is 0 if not)
 0001 | Is The Serial Out Buffer Full?
-0010 | Serial Output(The data on the bus is added to the Serial out buffer)
-0011 | Serial Input(a *BYTE* is taken off the serial in buffer and output onto the bus)
+0010 | Serial Output(The data in IO is added to the Serial out buffer)
+0011 | Serial Input(a *BYTE* is taken off the serial in buffer and placed into IO)
