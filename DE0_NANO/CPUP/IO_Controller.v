@@ -26,21 +26,16 @@ reg read = 0;
 assign SerialData_Out = IO;
 reg serialW = 0; //Serial write
 assign SerialWrite = serialW;
+reg serialR = 0; //Serial write
+assign SerialRead = serialR;
 
 always @(posedge clock)
 begin
+	
 	serialW <= 0;
-	SerialR <= 0;
+	serialR <= 0;
 	if(SerialController[2])
 	begin
-		if(bus == 4'b0000) //Is there serial data
-		begin
-			IO <= SerialEmpty ? 0 : 1;
-		end
-		if(bus == 4'b0001) //Is the output buffer full
-		begin
-			IO <= SerialFull ? 1 : 0;
-		end
 		if(bus == 4'b0010) //Serial Output
 		begin
 			write <= 1;
@@ -54,10 +49,26 @@ begin
 	begin
 		IO <= bus;
 	end
+	if(SerialController[2])
+	begin
+			if(bus == 4'b0000) //Is there serial data
+		begin
+			IO <= SerialEmpty ? 0 : 1;
+		end
+		if(bus == 4'b0001) //Is the output buffer full
+		begin
+			IO <= SerialFull ? 1 : 0;
+		end
+	end
 	if(write)
 	begin
 		write <= 0;
 		serialW <= 1;
+	end
+	if(read)
+	begin
+		read <= 0;
+		serialR <= 1;
 	end
 end
 endmodule 
