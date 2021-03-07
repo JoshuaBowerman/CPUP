@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -656 800 -488 816)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SerialRX" (rect 5 0 47 17)(font "Intel Clear" ))
+	(text "SerialRX" (rect 5 0 46 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -1056,7 +1056,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect -272 776 272 1064)
 	(text "SerialIP" (rect 250 -1 303 15)(font "Arial" (font_size 10)))
-	(text "inst11" (rect 8 272 37 284)(font "Arial" ))
+	(text "inst5" (rect 8 272 30 289)(font "Intel Clear" ))
 	(port
 		(pt 0 72)
 		(input)
@@ -1110,21 +1110,21 @@ https://fpgasoftware.intel.com/eula.
 		(pt 544 88)
 		(output)
 		(text "rs232_0_from_uart_data[7..0]" (rect 0 0 169 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_from_uart_data[7..0]" (rect 393 77 536 91)(font "Arial" (font_size 8)))
+		(text "rs232_0_from_uart_data[7..0]" (rect 393 77 562 91)(font "Arial" (font_size 8)))
 		(line (pt 544 88)(pt 304 88)(line_width 3))
 	)
 	(port
 		(pt 544 104)
 		(output)
 		(text "rs232_0_from_uart_error" (rect 0 0 145 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_from_uart_error" (rect 414 93 536 107)(font "Arial" (font_size 8)))
+		(text "rs232_0_from_uart_error" (rect 414 93 559 107)(font "Arial" (font_size 8)))
 		(line (pt 544 104)(pt 304 104))
 	)
 	(port
 		(pt 544 120)
 		(output)
 		(text "rs232_0_from_uart_valid" (rect 0 0 142 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_from_uart_valid" (rect 416 109 536 123)(font "Arial" (font_size 8)))
+		(text "rs232_0_from_uart_valid" (rect 416 109 558 123)(font "Arial" (font_size 8)))
 		(line (pt 544 120)(pt 304 120))
 	)
 	(port
