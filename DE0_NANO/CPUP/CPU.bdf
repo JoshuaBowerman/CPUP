@@ -1919,6 +1919,10 @@ https://fpgasoftware.intel.com/eula.
 	(pt 392 432)
 )
 (connector
+	(pt -528 248)
+	(pt -528 776)
+)
+(connector
 	(pt 288 400)
 	(pt 160 400)
 	(bus)
@@ -1958,6 +1962,16 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt -128 320)
 	(pt 392 320)
+)
+(connector
+	(pt -448 592)
+	(pt -448 416)
+	(bus)
+)
+(connector
+	(pt -448 416)
+	(pt -416 416)
+	(bus)
 )
 (connector
 	(pt -240 416)
@@ -2045,6 +2059,20 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt -480 352)
 	(pt -480 456)
+)
+(connector
+	(pt -96 416)
+	(pt -104 416)
+	(bus)
+)
+(connector
+	(pt -448 592)
+	(pt -272 592)
+	(bus)
+)
+(connector
+	(pt -528 776)
+	(pt -344 776)
 )
 (junction (pt 392 96))
 (junction (pt 416 136))
