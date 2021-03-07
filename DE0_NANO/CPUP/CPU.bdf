@@ -1053,133 +1053,6 @@ https://fpgasoftware.intel.com/eula.
 		(rectangle (rect 16 16 240 192))
 	)
 )
-(symbol
-	(rect -272 776 272 1064)
-	(text "SerialIP" (rect 250 -1 303 15)(font "Arial" (font_size 10)))
-	(text "inst5" (rect 8 272 30 289)(font "Intel Clear" ))
-	(port
-		(pt 0 72)
-		(input)
-		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
-		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
-		(line (pt 0 72)(pt 224 72))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "reset_reset_n" (rect 0 0 80 14)(font "Arial" (font_size 8)))
-		(text "reset_reset_n" (rect 4 101 84 115)(font "Arial" (font_size 8)))
-		(line (pt 0 112)(pt 224 112))
-	)
-	(port
-		(pt 544 72)
-		(input)
-		(text "rs232_0_from_uart_ready" (rect 0 0 149 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_from_uart_ready" (rect 410 61 559 75)(font "Arial" (font_size 8)))
-		(line (pt 544 72)(pt 304 72))
-	)
-	(port
-		(pt 0 152)
-		(input)
-		(text "rs232_0_to_uart_data[7..0]" (rect 0 0 154 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_to_uart_data[7..0]" (rect 4 141 158 155)(font "Arial" (font_size 8)))
-		(line (pt 0 152)(pt 224 152)(line_width 3))
-	)
-	(port
-		(pt 0 168)
-		(input)
-		(text "rs232_0_to_uart_error" (rect 0 0 129 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_to_uart_error" (rect 4 157 133 171)(font "Arial" (font_size 8)))
-		(line (pt 0 168)(pt 224 168))
-	)
-	(port
-		(pt 0 184)
-		(input)
-		(text "rs232_0_to_uart_valid" (rect 0 0 127 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_to_uart_valid" (rect 4 173 131 187)(font "Arial" (font_size 8)))
-		(line (pt 0 184)(pt 224 184))
-	)
-	(port
-		(pt 0 240)
-		(input)
-		(text "rs232_0_UART_RXD" (rect 0 0 119 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_UART_RXD" (rect 4 229 123 243)(font "Arial" (font_size 8)))
-		(line (pt 0 240)(pt 224 240))
-	)
-	(port
-		(pt 544 88)
-		(output)
-		(text "rs232_0_from_uart_data[7..0]" (rect 0 0 169 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_from_uart_data[7..0]" (rect 393 77 562 91)(font "Arial" (font_size 8)))
-		(line (pt 544 88)(pt 304 88)(line_width 3))
-	)
-	(port
-		(pt 544 104)
-		(output)
-		(text "rs232_0_from_uart_error" (rect 0 0 145 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_from_uart_error" (rect 414 93 559 107)(font "Arial" (font_size 8)))
-		(line (pt 544 104)(pt 304 104))
-	)
-	(port
-		(pt 544 120)
-		(output)
-		(text "rs232_0_from_uart_valid" (rect 0 0 142 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_from_uart_valid" (rect 416 109 558 123)(font "Arial" (font_size 8)))
-		(line (pt 544 120)(pt 304 120))
-	)
-	(port
-		(pt 0 200)
-		(output)
-		(text "rs232_0_to_uart_ready" (rect 0 0 134 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_to_uart_ready" (rect 4 189 138 203)(font "Arial" (font_size 8)))
-		(line (pt 0 200)(pt 224 200))
-	)
-	(port
-		(pt 0 256)
-		(output)
-		(text "rs232_0_UART_TXD" (rect 0 0 118 14)(font "Arial" (font_size 8)))
-		(text "rs232_0_UART_TXD" (rect 4 245 122 259)(font "Arial" (font_size 8)))
-		(line (pt 0 256)(pt 224 256))
-	)
-	(drawing
-		(text "clk" (rect 209 43 226 58)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "clk" (rect 229 67 243 79)(font "Arial" (color 0 0 0)))
-		(text "reset" (rect 195 83 228 98)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "reset_n" (rect 229 107 265 119)(font "Arial" (color 0 0 0)))
-		(text "rs232_0_avalon_data_receive_source" (rect 305 43 553 58)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "ready" (rect 276 67 304 79)(font "Arial" (color 0 0 0)))
-		(text "data" (rect 283 83 304 95)(font "Arial" (color 0 0 0)))
-		(text "error" (rect 279 99 301 111)(font "Arial" (color 0 0 0)))
-		(text "valid" (rect 281 115 304 127)(font "Arial" (color 0 0 0)))
-		(text "rs232_0_avalon_data_transmit_sink" (rect 11 123 249 138)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "data" (rect 229 147 250 159)(font "Arial" (color 0 0 0)))
-		(text "error" (rect 229 163 251 175)(font "Arial" (color 0 0 0)))
-		(text "valid" (rect 229 179 252 191)(font "Arial" (color 0 0 0)))
-		(text "ready" (rect 229 195 257 207)(font "Arial" (color 0 0 0)))
-		(text "rs232_0_external_interface" (rect 64 211 241 226)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "RXD" (rect 229 235 251 247)(font "Arial" (color 0 0 0)))
-		(text "TXD" (rect 229 251 249 263)(font "Arial" (color 0 0 0)))
-		(text " SerialIP " (rect 508 272 552 284)(font "Arial" ))
-		(line (pt 224 32)(pt 304 32))
-		(line (pt 304 32)(pt 304 272))
-		(line (pt 224 272)(pt 304 272))
-		(line (pt 224 32)(pt 224 272))
-		(line (pt 225 52)(pt 225 76))
-		(line (pt 226 52)(pt 226 76))
-		(line (pt 225 92)(pt 225 116))
-		(line (pt 226 92)(pt 226 116))
-		(line (pt 303 52)(pt 303 124))
-		(line (pt 302 52)(pt 302 124))
-		(line (pt 225 132)(pt 225 204))
-		(line (pt 226 132)(pt 226 204))
-		(line (pt 225 220)(pt 225 260))
-		(line (pt 226 220)(pt 226 260))
-		(line (pt 0 0)(pt 544 0))
-		(line (pt 544 0)(pt 544 288))
-		(line (pt 0 288)(pt 544 288))
-		(line (pt 0 0)(pt 0 288))
-	)
-)
 (connector
 	(pt -88 -152)
 	(pt -112 -152)
@@ -2050,10 +1923,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt -528 776)
 )
 (connector
-	(pt -392 840)
-	(pt -392 832)
-)
-(connector
 	(pt 288 400)
 	(pt 160 400)
 	(bus)
@@ -2095,11 +1964,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 392 320)
 )
 (connector
-	(pt 168 592)
-	(pt -448 592)
-	(bus)
-)
-(connector
 	(pt -448 592)
 	(pt -448 416)
 	(bus)
@@ -2123,16 +1987,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt -128 528)
 )
 (connector
-	(pt 160 512)
-	(pt 168 512)
-	(bus)
-)
-(connector
-	(pt 168 512)
-	(pt 168 592)
-	(bus)
-)
-(connector
 	(pt -96 512)
 	(pt -192 512)
 	(bus)
@@ -2140,21 +1994,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt -192 416)
 	(pt -192 512)
-	(bus)
-)
-(connector
-	(pt -296 600)
-	(pt 176 600)
-	(bus)
-)
-(connector
-	(pt 176 600)
-	(pt 176 416)
-	(bus)
-)
-(connector
-	(pt 176 416)
-	(pt 160 416)
 	(bus)
 )
 (connector
@@ -2222,285 +2061,18 @@ https://fpgasoftware.intel.com/eula.
 	(pt -480 456)
 )
 (connector
-	(pt 160 608)
-	(pt -144 608)
-)
-(connector
-	(pt -144 608)
-	(pt -144 464)
-)
-(connector
-	(pt -96 464)
-	(pt -144 464)
-)
-(connector
 	(pt -96 416)
 	(pt -104 416)
 	(bus)
 )
 (connector
-	(pt -104 416)
-	(pt -104 584)
+	(pt -448 592)
+	(pt -272 592)
 	(bus)
-)
-(connector
-	(pt -104 584)
-	(pt 192 584)
-	(bus)
-)
-(connector
-	(pt 208 616)
-	(pt -152 576)
-)
-(connector
-	(pt 208 608)
-	(pt -152 568)
-)
-(connector
-	(pt -96 448)
-	(pt -152 448)
-)
-(connector
-	(pt -152 448)
-	(pt -152 568)
-)
-(connector
-	(pt -96 432)
-	(pt -160 432)
-)
-(connector
-	(pt -160 432)
-	(pt -160 576)
-)
-(connector
-	(pt -160 576)
-	(pt -152 576)
-)
-(connector
-	(pt 208 608)
-	(pt 216 608)
-)
-(connector
-	(pt -304 632)
-	(pt 208 592)
-)
-(connector
-	(pt -304 624)
-	(pt 208 584)
-)
-(connector
-	(pt -304 616)
-	(pt 208 576)
-)
-(connector
-	(pt 208 576)
-	(pt 232 576)
-)
-(connector
-	(pt 232 576)
-	(pt 232 432)
-)
-(connector
-	(pt 160 432)
-	(pt 232 432)
-)
-(connector
-	(pt 160 448)
-	(pt 240 448)
-)
-(connector
-	(pt 240 448)
-	(pt 240 584)
-)
-(connector
-	(pt 240 584)
-	(pt 208 584)
-)
-(connector
-	(pt 208 592)
-	(pt 248 592)
-)
-(connector
-	(pt 248 592)
-	(pt 248 464)
-)
-(connector
-	(pt 160 464)
-	(pt 248 464)
-)
-(connector
-	(pt -304 616)
-	(pt -336 616)
-)
-(connector
-	(pt -304 624)
-	(pt -328 624)
-)
-(connector
-	(pt -304 632)
-	(pt -320 632)
-)
-(connector
-	(pt -536 840)
-	(pt -536 864)
-)
-(connector
-	(pt -536 840)
-	(pt -392 840)
-)
-(connector
-	(pt -536 864)
-	(pt -528 864)
-)
-(connector
-	(pt -488 816)
-	(pt -488 808)
 )
 (connector
 	(pt -528 776)
-	(pt -336 776)
-)
-(connector
-	(pt -336 776)
-	(pt -336 848)
-)
-(connector
-	(pt -336 848)
-	(pt -272 848)
-)
-(connector
-	(pt -272 1016)
-	(pt -344 1016)
-)
-(connector
-	(pt -344 1016)
-	(pt -344 816)
-)
-(connector
-	(pt -488 816)
-	(pt -344 816)
-)
-(connector
-	(pt -272 1032)
-	(pt -352 1032)
-)
-(connector
-	(pt -352 1032)
-	(pt -352 832)
-)
-(connector
-	(pt -392 832)
-	(pt -352 832)
-)
-(connector
-	(pt -320 888)
-	(pt -272 888)
-)
-(connector
-	(pt -320 632)
-	(pt -320 888)
-)
-(connector
-	(pt -328 976)
-	(pt -272 976)
-)
-(connector
-	(pt -328 624)
-	(pt -328 976)
-)
-(connector
-	(pt -336 768)
-	(pt -312 768)
-)
-(connector
-	(pt -336 616)
-	(pt -336 768)
-)
-(connector
-	(pt -312 768)
-	(pt -312 960)
-)
-(connector
-	(pt -312 960)
-	(pt -272 960)
-)
-(connector
-	(pt -296 928)
-	(pt -272 928)
-	(bus)
-)
-(connector
-	(pt 216 608)
-	(pt 216 632)
-)
-(connector
-	(pt 272 880)
-	(pt 288 880)
-)
-(connector
-	(pt 288 880)
-	(pt 288 632)
-)
-(connector
-	(pt 288 632)
-	(pt 216 632)
-)
-(connector
-	(pt 272 896)
-	(pt 296 896)
-)
-(connector
-	(pt 296 896)
-	(pt 296 648)
-)
-(connector
-	(pt 296 648)
-	(pt 208 648)
-)
-(connector
-	(pt 208 616)
-	(pt 208 648)
-)
-(connector
-	(pt 192 664)
-	(pt 304 664)
-	(bus)
-)
-(connector
-	(pt 192 584)
-	(pt 192 664)
-	(bus)
-)
-(connector
-	(pt 304 664)
-	(pt 304 864)
-	(bus)
-)
-(connector
-	(pt 304 864)
-	(pt 272 864)
-	(bus)
-)
-(connector
-	(pt 160 672)
-	(pt 280 672)
-)
-(connector
-	(pt 160 608)
-	(pt 160 672)
-)
-(connector
-	(pt 280 672)
-	(pt 280 848)
-)
-(connector
-	(pt 280 848)
-	(pt 272 848)
-)
-(connector
-	(pt -296 600)
-	(pt -296 928)
-	(bus)
+	(pt -344 776)
 )
 (junction (pt 392 96))
 (junction (pt 416 136))
