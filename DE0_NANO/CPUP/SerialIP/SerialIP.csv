@@ -1,0 +1,26 @@
+# system info SerialIP on 2021.02.19.13:58:31
+system_info:
+name,value
+DEVICE,EP4CE22F17C6
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1613761110
+#
+#
+# Files generated for SerialIP on 2021.02.19.13:58:31
+files:
+filepath,kind,attributes,module,is_top
+simulation/SerialIP.v,VERILOG,,SerialIP,true
+simulation/submodules/altera_up_rs232_counters.v,VERILOG,,SerialIP_rs232_0,false
+simulation/submodules/altera_up_rs232_in_deserializer.v,VERILOG,,SerialIP_rs232_0,false
+simulation/submodules/altera_up_rs232_out_serializer.v,VERILOG,,SerialIP_rs232_0,false
+simulation/submodules/altera_up_sync_fifo.v,VERILOG,,SerialIP_rs232_0,false
+simulation/submodules/SerialIP_rs232_0.v,VERILOG,,SerialIP_rs232_0,false
+simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
+simulation/submodules/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
+simulation/submodules/altera_reset_controller.sdc,SDC,,altera_reset_controller,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+SerialIP.rs232_0,SerialIP_rs232_0
+SerialIP.rst_controller,altera_reset_controller
