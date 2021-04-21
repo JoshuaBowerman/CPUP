@@ -7,7 +7,7 @@ input		[7:0]		SerialData_in,
 input    			SerialEmpty,
 output				SerialRead,
 output	[7:0]		SerialData_out,
-output				SerialFull,
+input				SerialFull,
 output				SerialWrite,
 input 				clock
 );
