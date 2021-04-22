@@ -18,4 +18,17 @@ Value | Function
 0001 | Is The Serial Out Buffer Full?
 0010 | Serial Output(The data in IO is added to the Serial out buffer)
 0011 | Serial Input(a *BYTE* is taken off the serial in buffer and placed into IO)
-0100 | Baud Change
+
+
+## IO Archetecture
+The IO Module connects the cpu with all external hardware. It will support Serial, I2C, and Persistant Storage. It contains it's own 8-bit `IO_Bus` for data, and an 8-bit `IO_Command_Bus` for commands.
+
+### IO Command Bus Instruction Table
+
+Value | Device | Function
+----- | ------ | --------
+0 | All | NOP
+1 | Serial | Receive Buffer Size (how many bytes are waiting)
+2 | Serial | Transmit Buffer Size
+3 | Serial | Take byte from receive buffer and place on `IO Bus`.
+4 | Serial | Take byte from `IO_Bus` and place in the transmit buffer.
