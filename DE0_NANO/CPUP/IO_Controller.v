@@ -5,7 +5,8 @@ inout		[15:0]	bus,
 input		[2:0]		IO_Control_Bus,
 inout		[7:0]		IO_Bus,
 output   [7:0]    IO_Command_Bus,
-input 				clock
+input 				clock,
+output	[7:0]		IO_Register
 );
 
 reg   [15:0]   IO;
@@ -23,7 +24,7 @@ reg io_ie = 0;
 
 assign IO_Bus = io_oe ? data_out[7:0] : 8'bZ;
 
-
+assign IO_Register = IO[7:0];
 
 always @(posedge clock)
 begin
