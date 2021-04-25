@@ -148,6 +148,16 @@ define $JGE AMEM
 	.next
 	.jmp_amem
 end
+define $JG MEM
+	EROUT GREATER
+	.next
+	.jmp_mem
+end
+define $JG AMEM
+	EROUT GREATER
+	.next
+	.jmp_amem
+end
 define $JL REG
 	EROUT GREATER EQUALS
 	.jmp_reg
