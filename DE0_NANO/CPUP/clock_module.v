@@ -8,7 +8,7 @@ module clock_module(
 	);
 	
 	
-reg [7:0] 	counter;
+reg [31:0] 	counter;
 reg 			clk = 0;
 reg			clk_p = 0;
 reg			clk_micro = 0;
@@ -18,7 +18,7 @@ assign clock_microcode = clk_micro;
 always @(posedge clock_in)
 	begin
 		counter <= counter+1;
-		if(counter >= ratio)
+		if(counter >= 250000)
 			begin
 					counter <= 0;
 					clk_micro = ~ clk_micro;
